@@ -1,0 +1,43 @@
+plugins {
+    id "com.jfrog.bintray" version "1.7.3"
+}
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation gradleApi()//gradle sdk
+    implementation localGroovy()//groovy sdk
+}
+
+
+install {
+    repositories {
+        mavenInstaller {
+            pom.project {
+                name 'EasyDependency'
+            }
+        }
+    }
+}
+
+group = 'tech.easily'
+version = '1.0.1'
+
+bintray {
+    user = JCENTER_USER
+    key = JCENTER_PASSWORD
+
+    pkg {
+        repo = 'easilytech'
+        name = 'EasyDependency'
+        licenses = ['MIT']
+        vcsUrl = 'https://github.com/easilycoder/EasyDependency'
+        configurations = ['archives']
+        publish = true
+    }
+}
+
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
