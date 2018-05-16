@@ -1,3 +1,7 @@
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![Download](https://api.bintray.com/packages/easily/easilytech/EasyDependency/images/download.svg?version=1.0.1)](https://bintray.com/easily/easilytech/EasyDependency/1.0.1/link)
+
 # EasyDependency
 
 一个帮助提高组件化开发效率的gradle插件，提供的功能包括：
@@ -18,9 +22,7 @@
        repositories {
            ...
            // 添加仓库地址
-           maven{
-               url='https://dl.bintray.com/easily/easilytech'
-           }
+           jcenter()
        }
        dependencies {
            ...
